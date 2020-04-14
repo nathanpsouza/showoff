@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.5p114
+      Contenttype:
+      - application/json
+      Authorization:
+      - Bearer f311c6ac1a39c0eb29a41ff602319b618e54381786e457f4cab08a10e700a72b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 13 Apr 2020 03:58:19 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"0bf98453d07ead1eaf694899b90a3329"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7eb1ab11-ee7e-47fe-bb0b-0353786973dc
+      X-Runtime:
+      - '0.015906'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"widgets":[{"id":2349,"name":"rspec
+        widget","description":"rspec widget","kind":"hidden","user":{"id":4105,"name":"rspec
+        test","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"rspec","last_name":"test","date_of_birth":null,"email":"foo@rspec.com","active":true},"owner":true}]}}'
+    http_version: null
+  recorded_at: Mon, 13 Apr 2020 03:58:20 GMT
+recorded_with: VCR 5.1.0

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"grant_type":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","username":"foo@rspec.com","password":"123123123"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.5p114
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '237'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 12 Apr 2020 22:47:33 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"20d7dbd800f2ec8721f6b5f4732e0c0e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e8e61340-45ee-4776-8d64-dc91aededc5e
+      X-Runtime:
+      - '0.179792'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"73a1bd12571e32e0016c204d42475766e68123e3c84cd2cb40dc49a16e898917","token_type":"Bearer","expires_in":2592000,"refresh_token":"db15ab9f088937f4bdf504c4b1d9c27b5c43d0c181941b01dba032a3c425f690","scope":"basic","created_at":1586731654}}}'
+    http_version: null
+  recorded_at: Sun, 12 Apr 2020 22:47:34 GMT
+recorded_with: VCR 5.1.0

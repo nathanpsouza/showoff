@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"foo@rspec.com","first_name":"rspec","last_name":"test","password":"123123123"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.5p114
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '259'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 10 Apr 2020 16:04:48 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"f2d878b1d6b07841a3d5f4b0e8c90c35"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - '01847236-5ab0-486d-b67a-ec267d7d3402'
+      X-Runtime:
+      - '0.189897'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"user":{"id":4105,"name":"rspec
+        test","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"rspec","last_name":"test","date_of_birth":null,"email":"foo@rspec.com","active":true},"token":{"access_token":"d8f15a4df50521f08fb4060b957a5b2a984144f17edbfc3ee80dd1df030fc276","token_type":"Bearer","expires_in":2592000,"refresh_token":"400f765c553116f5beb11df9a75065d0a15aa0c652c92c8a839e5f1e0d2739b6","scope":"basic","created_at":1586534689}}}'
+    http_version: null
+  recorded_at: Fri, 10 Apr 2020 16:04:49 GMT
+recorded_with: VCR 5.1.0
