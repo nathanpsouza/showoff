@@ -12,8 +12,11 @@
         </li>
       <% end %>
     </ul>
-    <%- if session[:user] %>
-      <%= link_to 'Logout', authentication_index_path, method: :delete, class: 'btn btn-danger' %>
+    <%- if session[:auth] %>
+      <span>
+        Logged as: <%= link_to session[:user]['email'], edit_users_path %>
+      </span>
+      <%= link_to 'Logout', authentication_index_path, method: :delete %>
     <%- else %>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">

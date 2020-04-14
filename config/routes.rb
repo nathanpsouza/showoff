@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
   resources :widgets, only: %i[index create new]
-  resources :users, only: %i[create new show]
+  resources :users, only: %i[create new show] do
+    get :edit, on: :collection
+    put :update, on: :collection
+  end
 end
+

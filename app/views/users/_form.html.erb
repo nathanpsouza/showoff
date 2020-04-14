@@ -1,0 +1,10 @@
+<%= simple_form_for user, method: (user.id.nil? ? :create : :put) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%- if user.id.nil? %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
+  <%= f.button :submit, class: 'btn-primary', value: 'Save' %>
+<% end %>

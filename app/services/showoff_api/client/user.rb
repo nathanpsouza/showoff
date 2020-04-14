@@ -28,6 +28,18 @@ module ShowoffApi
         user('me')
       end
 
+      def update(user)
+        response = do_put('me', request_body(user))
+
+        handle_response(response)
+      end
+
+      def headers
+        headers = super
+        headers.merge!({ 'Authorization' => "Bearer #{@token}" }) if @token
+        headers
+      end
+
       private
         def request_body(user)
           {

@@ -23,7 +23,7 @@ class WidgetsController < ApplicationController
 
   private
     def widget_client
-      @client ||= ShowoffApi::Client.widget(session[:user]['access_token'])
+      @client ||= ShowoffApi::Client.widget(access_token)
     end
 
     def widget_params

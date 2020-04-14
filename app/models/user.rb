@@ -3,7 +3,8 @@
 class User
   include ActiveModel::Model
 
-  attr_accessor :email,
+  attr_accessor :id,
+                :email,
                 :first_name,
                 :last_name,
                 :password,

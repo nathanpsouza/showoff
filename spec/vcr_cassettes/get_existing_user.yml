@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.5p114
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer f311c6ac1a39c0eb29a41ff602319b618e54381786e457f4cab08a10e700a72b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - showoff-rails-react-production.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 14 Apr 2020 11:25:22 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"b1b5a6bfcea171bedea0101fcc05846f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8509a3ce-cebc-4549-a36a-abbeb75e5438
+      X-Runtime:
+      - '0.027503'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"user":{"id":1,"name":"tyler
+        Thunderbird","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/small/quisvoluptatesquia.png?1549584243","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/medium/quisvoluptatesquia.png?1549584243","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/large/quisvoluptatesquia.png?1549584243","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/001/original/quisvoluptatesquia.png?1549584243"},"first_name":"tyler","last_name":"Thunderbird"}}}'
+    http_version: null
+  recorded_at: Tue, 14 Apr 2020 11:25:23 GMT
+recorded_with: VCR 5.1.0

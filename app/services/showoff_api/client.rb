@@ -2,9 +2,9 @@
 
 module ShowoffApi
   module Client
-    def self.user
+    def self.user(token=nil)
       verify_api_credentials
-      User.new(*default_attributes)
+      User.new(token, *default_attributes)
     end
 
     def self.authentication
