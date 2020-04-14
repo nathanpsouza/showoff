@@ -4,7 +4,7 @@ $(document).ready(() => {
   
   $("#login-form").on("ajax:success", (event) => {
     const [data, status, xhr] = event.detail
-    console.log(data)
+    window.location.href = '/'
   }).on("ajax:error", (event) => {
     const [data, status, xhr] = event.detail
     console.log(data)
