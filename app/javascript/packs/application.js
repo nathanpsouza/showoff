@@ -10,6 +10,7 @@ require("channels")
 
 import 'jquery'
 import('plugins')
+import('login')
 
 import 'css/site'
 
