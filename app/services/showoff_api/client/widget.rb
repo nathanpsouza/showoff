@@ -12,7 +12,7 @@ module ShowoffApi
         'api/v1/widgets'
       end
 
-      def widgets(term = nil)
+      def widgets(_term = nil)
         response = do_get
 
         handle_response(response)

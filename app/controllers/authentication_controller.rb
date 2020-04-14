@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 class AuthenticationController < ApplicationController
   def create
     auth = authentication_client.login(user_params)
 
-    if auth[:status] == :success
-      session[:user] = auth[:data][:token]
-    end
-    
+    session[:user] = auth[:data][:token] if auth[:status] == :success
+
     render json: auth, status: :ok
+  end
+
+  def destroy
+    session.delete(:user)
+    redirect_to root_path
   end
 
   private

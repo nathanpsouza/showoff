@@ -13,26 +13,26 @@ RSpec.shared_examples 'a service with api credentials' do
     ENV.delete('API_ADDRESS')
     message = 'You must provide API_ADDRESS environment variable'
 
-    expect {
+    expect do
       method_call.call
-    }.to raise_error(RuntimeError, message)
+    end.to raise_error(RuntimeError, message)
   end
 
   it 'Throw exception if ENV[\'CLIENT_ID\'] is not set' do
     ENV.delete('CLIENT_ID')
     message = 'You must provide CLIENT_ID environment variable'
 
-    expect {
+    expect do
       method_call.call
-    }.to raise_error(RuntimeError, message)
+    end.to raise_error(RuntimeError, message)
   end
 
   it 'Throw exception if ENV[\'CLIENT_SECRET\'] is not set' do
     ENV.delete('CLIENT_SECRET')
     message = 'You must provide CLIENT_SECRET environment variable'
 
-    expect {
+    expect do
       method_call.call
-    }.to raise_error(RuntimeError, message)
+    end.to raise_error(RuntimeError, message)
   end
 end

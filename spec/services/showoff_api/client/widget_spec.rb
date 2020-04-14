@@ -12,13 +12,13 @@ module ShowoffApi
         )
       end
 
-      describe 'widgets' do
+      describe '#widgets' do
         let(:cassette_name) { 'get_widgets' }
         it 'return widgets in data attribute' do
           VCR.use_cassette(cassette_name) do
             result = widget_client.widgets
             expect(result[:data][:widgets].size).to eq(1)
-            keys = ['id', 'name', 'description', 'kind', 'user', 'owner']
+            keys = %w[id name description kind user owner]
             expect(result[:data][:widgets][0].keys).to contain_exactly(*keys)
           end
         end
@@ -40,7 +40,7 @@ module ShowoffApi
         end
       end
 
-      describe 'save' do
+      describe '#save' do
         let(:name) { 'rspec widget' }
         let(:description) { 'rspec widget' }
         let(:kind) { 'hidden' }
@@ -108,7 +108,7 @@ module ShowoffApi
         end
       end
 
-      describe 'update' do
+      describe '#update' do
         let(:widget_id) { 2349 }
         let(:name) { 'rspec widget update' }
         let(:description) { 'rspec widget' }
@@ -178,7 +178,7 @@ module ShowoffApi
         end
       end
 
-      describe 'destroy' do
+      describe '#destroy' do
         context 'when widget exists' do
           let(:widget_id) { 2349 }
           let(:cassette_name) { 'delete_existing_hidden_widget' }

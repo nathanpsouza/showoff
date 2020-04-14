@@ -1,0 +1,40 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - db/schema.rb
+    - bin/setup
+    - node_modules
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Layout/LineLength:
+  Max: 80
+
+Metrics/MethodLength:
+  Max: 10
+  Exclude:
+    - db/migrate/*.rb
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - spec/**/*_spec.rb
+    - spec/support/shared_examples/**/*.rb
+    - lib/tasks/**/*.rake
+    - config/**/*.rb
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent

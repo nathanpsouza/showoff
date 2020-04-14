@@ -5,7 +5,10 @@ require 'rails_helper'
 module ShowoffApi
   module Client
     describe User do
-      describe 'save' do
+      describe '#user' do
+      end
+
+      describe '#save' do
         let(:email) { 'foo@rspec.com' }
         let(:first_name) { 'rspec' }
         let(:last_name) { 'test' }
@@ -80,7 +83,7 @@ module ShowoffApi
         end
       end
 
-      describe 'update' do
+      describe '#update' do
         let(:email) { 'foo@rspec.com' }
         let(:first_name) { 'rspec' }
         let(:last_name) { 'test' }

@@ -1,4 +1,5 @@
 <div class="col-sm-3">
   <h2><%= widget[:name] %></h2>
   <p><%= widget[:description] %></p>
+  <p>by <%= link_to widget[:user][:name], user_path(widget[:user][:id]) %></p>
 </div>

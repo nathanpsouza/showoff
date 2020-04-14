@@ -59,14 +59,20 @@ module ShowoffApi
           e.response
         end
 
+        def do_single_get(id)
+          resource[id].get
+        rescue RestClient::ExceptionWithResponse => e
+          e.response
+        end
+
         def do_put(id, request_body)
-          resource["#{id}"].put(request_body.to_json)
+          resource[id.to_s].put(request_body.to_json)
         rescue RestClient::ExceptionWithResponse => e
           e.response
         end
 
         def do_delete(id)
-          resource["#{id}"].delete
+          resource[id.to_s].delete
         rescue RestClient::ExceptionWithResponse => e
           e.response
         end

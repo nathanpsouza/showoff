@@ -7,7 +7,7 @@ class Widget
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :kind, presence: true, inclusion: { in: ['visible', 'hidden'] }
+  validates :kind, presence: true, inclusion: { in: %w[visible hidden] }
 
   def to_hash
     {

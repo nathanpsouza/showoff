@@ -13,7 +13,7 @@ module ShowoffApi
         )
       end
 
-      describe 'login' do
+      describe '#login' do
         let(:email) { 'foo@rspec.com' }
         let(:password) { '123123123' }
 
@@ -79,14 +79,6 @@ module ShowoffApi
             end
           end
         end
-      end
-
-      describe 'logout' do
-
-      end
-
-      describe 'refresh' do
-
       end
     end
   end

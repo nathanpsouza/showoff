@@ -5,7 +5,7 @@ require 'rails_helper'
 module ShowoffApi
   module Client
     describe VisibleWidget do
-      describe 'save' do
+      describe '#visible' do
         let(:widget_client) do
           VisibleWidget.new(
             ENV['API_ADDRESS'], ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
@@ -19,7 +19,7 @@ module ShowoffApi
             VCR.use_cassette(cassette_name) do
               result = widget_client.visible(term)
               expect(result[:data][:widgets].size).to eq(20)
-              keys = ['id', 'name', 'description', 'kind', 'user', 'owner']
+              keys = %w[id name description kind user owner]
               expect(result[:data][:widgets][0].keys).to contain_exactly(*keys)
             end
           end
@@ -47,7 +47,7 @@ module ShowoffApi
             VCR.use_cassette(cassette_name) do
               result = widget_client.visible
               expect(result[:data][:widgets].size).to eq(20)
-              keys = ['id', 'name', 'description', 'kind', 'user', 'owner']
+              keys = %w[id name description kind user owner]
               expect(result[:data][:widgets][0].keys).to contain_exactly(*keys)
             end
           end

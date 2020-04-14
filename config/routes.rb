@@ -1,7 +1,11 @@
-Rails.application.routes.draw do
-  root to:'home#index'
+# frozen_string_literal: true
 
-  resources :authentication, only: [:create]
-  resources :widgets, only: [:index, :create, :new]
-  resources :users, only: [:create, :new] 
+Rails.application.routes.draw do
+  root to: 'home#index'
+
+  resources :authentication, only: [:create] do
+    delete :destroy, on: :collection
+  end
+  resources :widgets, only: %i[index create new]
+  resources :users, only: %i[create new show]
 end

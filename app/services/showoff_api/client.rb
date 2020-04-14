@@ -19,13 +19,13 @@ module ShowoffApi
 
     def self.widget(token)
       verify_api_credentials
-      Widget.new(*[token, *default_attributes])
+      Widget.new(token, *default_attributes)
     end
 
     def self.verify_api_credentials
-      ['API_ADDRESS', 'CLIENT_ID', 'CLIENT_SECRET'].each do |env|
-        unless ENV.has_key?(env)
-          raise RuntimeError.new("You must provide #{env} environment variable")
+      %w[API_ADDRESS CLIENT_ID CLIENT_SECRET].each do |env|
+        unless ENV.key?(env)
+          raise "You must provide #{env} environment variable"
         end
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WidgetsController < ApplicationController
   def index
     @term = params[:term]
