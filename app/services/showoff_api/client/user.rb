@@ -37,6 +37,21 @@ module ShowoffApi
         handle_response(response)
       end
 
+      def reset_password(data)
+        body = {
+          client_id: @client_id,
+          client_secret: @client_secret
+        }.merge(data)
+
+        begin
+          response = resource['reset_password'].post(body.to_json)
+        rescue RestClient::ExceptionWithResponse => e
+          response = e.response
+        end
+
+        handle_response(response)
+      end
+
       def me
         user('me')
       end
