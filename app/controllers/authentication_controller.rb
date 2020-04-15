@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
 
     session[:auth] = auth[:data][:token] if auth[:status] == :success
 
-    render json: auth, status: :ok
+    render json: auth, status: status_for(auth[:status])
   end
 
   def destroy
@@ -20,6 +20,10 @@ class AuthenticationController < ApplicationController
       params.require(:user).permit(
         :email, :password
       )
+    end
+
+    def status_for result
+      result == :success ? :ok : :unprocessable_entity
     end
 
     def authentication_client
