@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets?term
     body:
       encoding: US-ASCII
       string: ''
