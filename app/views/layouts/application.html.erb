@@ -14,6 +14,11 @@
   <body>
     <%= render 'shared/navbar' %>
     <div class="container content">
+      <%- if flash[:error] %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < ProtectedController
+  skip_before_action :check_access_token, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
       user_client.save(@user)
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
