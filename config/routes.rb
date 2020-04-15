@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :authentication, only: [:create] do
     delete :destroy, on: :collection
   end
-  resources :widgets, only: %i[index create new]
+  resources :widgets, only: %i[index create new destroy]
   resources :users, only: %i[create new show] do
     get :edit, on: :collection
     put :update, on: :collection

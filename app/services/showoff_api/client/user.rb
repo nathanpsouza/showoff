@@ -24,6 +24,19 @@ module ShowoffApi
         handle_response(response)
       end
 
+      def widgets_for(id, term=nil)
+        query = {
+          client_id: @client_id,
+          client_secret: @client_secret
+        }
+
+        query[:term] = term if term
+
+        response = do_single_get("/#{id}/widgets/", query)
+
+        handle_response(response)
+      end
+
       def me
         user('me')
       end

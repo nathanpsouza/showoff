@@ -33,6 +33,14 @@ class UsersController < ProtectedController
       render :new
     end
   end
+  
+
+  def show
+    @term = params[:term]
+    @user = user_client.user(params[:id])[:data][:user]
+    result = user_client.widgets_for(params[:id], @term)
+    @widgets = result[:data][:widgets]
+  end
 
   private
     def user_params

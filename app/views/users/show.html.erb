@@ -1,0 +1,10 @@
+<%= render partial: 'shared/search', locals: { term: @term } %>
+
+<h1>Widgets for <%= @user[:name] %></h1>
+
+<div class="row">
+  <%- @widgets.each do |widget| %>
+    <%= render partial: 'widgets/widget', locals: { widget: widget } %>
+  <% end %>
+</div>
+

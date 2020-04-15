@@ -5,7 +5,9 @@ class ProtectedController < ApplicationController
 
   private
   def check_access_token
-    flash[:error] = 'You must login first'
-    redirect_to root_path unless access_token
+    unless access_token
+      flash[:error] = 'You must login first'
+      redirect_to root_path 
+    end
   end
 end

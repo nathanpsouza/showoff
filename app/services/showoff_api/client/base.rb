@@ -59,8 +59,8 @@ module ShowoffApi
           e.response
         end
 
-        def do_single_get(id)
-          resource[id].get
+        def do_single_get(id, query_string = {})
+          resource[id].get(params: query_string)
         rescue RestClient::ExceptionWithResponse => e
           e.response
         end

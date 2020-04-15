@@ -21,6 +21,11 @@ class WidgetsController < ApplicationController
     end
   end
 
+  def destroy
+    widget_client.delete(params[:id])
+    redirect_to widgets_path
+  end
+
   private
     def widget_client
       @client ||= ShowoffApi::Client.widget(access_token)

@@ -5,7 +5,14 @@
       <p class="card-text"><%= widget[:description] %></p>
     </div>
     <div class="card-footer text-center bg-white">
-      <span>See more from <%= link_to widget[:user][:name], user_path(widget[:user][:id]) %></span>
+      <%- if widget[:owner] %>
+        <%= link_to widget_path(widget[:id]), data: { confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger' do %>
+          <i class="far fa-trash-alt"></i>
+          Remove
+        <% end %>
+      <% else %>
+        <span>See more from <%= link_to widget[:user][:name], user_path(widget[:user][:id]) %></span>
+      <% end %>
     </div>
   </div>
 </div>
