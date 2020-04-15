@@ -76,4 +76,11 @@ RSpec.describe 'Authentications', type: :request do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    it 'redirect to root page' do
+      delete '/authentication'
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end
