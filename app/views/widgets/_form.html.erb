@@ -1,0 +1,6 @@
+<%= simple_form_for widget, url: (widget.id.nil? ? widgets_path : widget_path(widget.id)), method: (widget.id.nil? ? :create : :put) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :kind, collection: ['visible', 'hidden'] %>
+  <%= f.button :submit, class: 'btn-primary', value: 'Save' %>
+<% end %>

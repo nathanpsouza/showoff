@@ -3,12 +3,17 @@
     <div class="card-body">
       <h4 class="card-title"><%= widget[:name] %></h4>
       <p class="card-text"><%= widget[:description] %></p>
+      <p class="card-text">kind: <%= widget[:kind] %></p>
     </div>
     <div class="card-footer text-center bg-white">
       <%- if widget[:owner] %>
         <%= link_to widget_path(widget[:id]), data: { confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger' do %>
           <i class="far fa-trash-alt"></i>
           Remove
+        <% end %>
+        <%= link_to edit_widget_path(widget[:id], { widget: filter_attributes(widget)}), class: 'btn btn-primary' do %>
+          <i class="far fa-edit"></i>
+          Edit
         <% end %>
       <% else %>
         <span>See more from <%= link_to widget[:user][:name], user_path(widget[:user][:id]) %></span>

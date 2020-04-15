@@ -11,6 +11,11 @@ class WidgetsController < ApplicationController
     @widget = Widget.new
   end
 
+  def edit
+    @widget = Widget.new(widget_params)
+    @widget.id = params[:id]
+  end
+
   def create
     @widget = Widget.new(widget_params)
     if @widget.valid?
@@ -18,6 +23,17 @@ class WidgetsController < ApplicationController
       redirect_to widgets_path
     else
       render :new
+    end
+  end
+
+  def update
+    @widget = Widget.new(widget_params)
+    if @widget.valid?
+      widget_client.update(params[:id], @widget)
+      redirect_to widgets_path
+    else
+      @widget.id = params[:id]
+      render :edit
     end
   end
 
@@ -33,7 +49,7 @@ class WidgetsController < ApplicationController
 
     def widget_params
       params.require(:widget).permit(
-        :name, :description
-      ).merge(kind: 'hidden')
+        :id, :name, :description, :kind
+      )
     end
 end
